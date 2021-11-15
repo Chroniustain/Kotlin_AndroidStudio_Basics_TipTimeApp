@@ -53,13 +53,13 @@
             android:text="@string/okay_service_option" />
     </RadioGroup>
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/round_up_switch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:checked="true"
         android:minHeight="48dp"
-        android:text="Round up tip?"
+        android:text="@string/round_up"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tip_options" />
 
@@ -76,7 +76,7 @@
         android:id="@+id/tip_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tip_amount"
+        android:text="Tip Amount: $10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/calculate_button" />
 
