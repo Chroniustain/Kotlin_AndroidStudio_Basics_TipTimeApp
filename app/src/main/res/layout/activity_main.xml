@@ -12,28 +12,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:importantForAccessibility="no"
-        app:srcCompat="@drawable/ic_store"
-        app:layout_constraintTop_toTopOf="@id/cost_of_service"
         app:layout_constraintBottom_toBottomOf="@id/cost_of_service"
-        app:layout_constraintStart_toStartOf="parent"/>
-    
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cost_of_service"
+        app:srcCompat="@drawable/ic_store" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cost_of_service"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:hint="@string/cost_of_service"
         android:layout_marginStart="16dp"
-        app:layout_constraintStart_toEndOf="@id/cost_of_service_icon"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/cost_of_service"
+        android:textColorHint="@color/cyan_dark"
+        app:boxBackgroundMode="outline"
         app:boxStrokeColor="@color/cyan_dark"
-        android:textColorHint="@color/cyan_dark">
+        app:layout_constraintStart_toEndOf="@id/cost_of_service_icon"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/cost_of_service_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -42,22 +43,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:importantForAccessibility="no"
-        app:srcCompat="@drawable/ic_service"
+        app:layout_constraintBottom_toBottomOf="@id/review_service"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/review_service"
-        app:layout_constraintBottom_toBottomOf="@id/review_service"/>
+        app:srcCompat="@drawable/ic_service" />
 
 
     <TextView
         android:id="@+id/review_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/review_service_question"
         android:layout_marginStart="16dp"
+        android:text="@string/review_service_question"
+        style="@style/Widget.TipTime.TextView"
         app:layout_constraintStart_toEndOf="@id/review_service_icon"
-        app:layout_constraintTop_toBottomOf="@id/cost_of_service"/>
+        app:layout_constraintTop_toBottomOf="@id/cost_of_service" />
 
-    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    <RadioGroup
         android:id="@+id/tip_options"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,19 +72,22 @@
             android:id="@+id/option_amazing_service"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/amazing_service_option" />
+            android:text="@string/amazing_service_option"
+            style="@style/Widget.TipTime.RadioButton"/>
 
         <RadioButton
             android:id="@+id/option_good_service"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/good_service_option" />
+            android:text="@string/good_service_option"
+            style="@style/Widget.TipTime.RadioButton"/>
 
         <RadioButton
             android:id="@+id/option_okay_service"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/okay_service_option" />
+            android:text="@string/okay_service_option"
+            style="@style/Widget.TipTime.RadioButton"/>
     </RadioGroup>
 
     <ImageView
@@ -90,19 +95,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:importantForAccessibility="no"
-        app:srcCompat="@drawable/ic_round_up"
+        app:layout_constraintBottom_toBottomOf="@id/round_up_switch"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/round_up_switch"
-        app:layout_constraintBottom_toBottomOf="@id/round_up_switch"/>
+        app:srcCompat="@drawable/ic_round_up" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/round_up_switch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:checked="true"
         android:minHeight="48dp"
         android:text="@string/round_up"
-        android:layout_marginStart="16dp"
+        style="@style/Widget.TipTime.SwitchButton"
         app:layout_constraintStart_toEndOf="@id/round_up_icon"
         app:layout_constraintTop_toBottomOf="@id/tip_options" />
 
@@ -110,8 +116,8 @@
         android:id="@+id/calculate_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/calculate_button"
         android:layout_marginEnd="30dp"
+        android:text="@string/calculate_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/round_up_switch"
         app:layout_constraintTop_toBottomOf="@id/round_up_switch" />
@@ -121,7 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tip Amount: "
-        android:textSize="18sp"
+        style="@style/Widget.TipTime.TextView"
         app:layout_constraintEnd_toEndOf="@id/calculate_button"
         app:layout_constraintTop_toBottomOf="@id/calculate_button" />
 
